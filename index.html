@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliana Bazán | Contadora Pública Certificada - Servicios Contables Profesionales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #3182ce;
+            --text-dark: #2d3748;
+            --text-light: #4a5568;
+            --background-light: #f7fafc;
+            --gold: #d69e2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .navbar {
+            background: var(--primary-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><path fill="%231a365d" d="M0 0h800v600H0z"/><path fill="%232c5282" d="M-1.1 0C8 45.3 34 110.7 127 177.3c80 57.3 113.2 55.8 151 61.3 54 7.9 77.8 18.9 147 62.7 92 58.3 197.3 89.3 304 14 106.7-75.3 214.7-166.7 359-114 6.7 2.5 20.7 8.9 40 16v382H-1.1z"/></svg>');
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            margin-top: -80px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(214, 158, 46, 0.3);
+        }
+
+        .credentials {
+            background: white;
+            padding: 5rem 0;
+            position: relative;
+            z-index: 2;
+            margin-top: -50px;
+            border-radius: 30px 30px 0 0;
+        }
+
+        .credential-card {
+            background: var(--background-light);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 1rem;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .credential-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: var(--accent-color);
+        }
+
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .cert-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+
+        .cert-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#home" class="logo">Eliana Bazán</a>
+            <div class="nav-links">
+                <a href="#servicios">Servicios</a>
+                <a href="#experiencia">Experiencia</a>
+                <a href="#certificaciones">Certificaciones</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Soluciones Contables<br>de Excelencia</h1>
+            <p>Bachiller en Ciencias Contables y Financieras | 8 años de experiencia profesional</p>
+            <a href="#contacto" class="btn-primary">Solicitar Consulta</a>
+        </div>
+    </header>
+
+    <section class="credentials">
+        <div class="container">
+            <div class="services-grid">
+                <div class="credential-card">
+                    <h3>Bachiller en Ciencias Contables</h3>
+                    <p>Universidad de San Martín de Porres</p>
+                    <small>Especialidad: Auditoría</small>
+                </div>
+                <div class="credential-card">
+                    <h3>8 Años de Experiencia</h3>
+                    <p>Auditoría • Control de Inventarios • Finanzas</p>
+                </div>
+                <div class="credential-card">
+                    <h3>Certificado Técnico</h3>
+                    <p>Asistente de Administración</p>
+                    <small>I.E.P. Johannes Gutenberg</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="section">
+        <div class="container">
+            <h2 class="section-title">Servicios Especializados</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Contabilidad y Finanzas</h3>
+                    <ul style="text-align: left; padding-left: 1.5rem;">
+                        <li>Elaboración de registro de ventas y compras</li>
+                        <li>Análisis de cuentas contables</li>
+                        <li>Cálculo de planilla y declaración en PLAME</li>
+                        <li>Conciliación bancaria</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Auditoría y Control</h3>
+                    <ul style="text-align: left; padding-left: 1.5rem;">
+                        <li>Auditoría interna y externa</li>
+                        <li>Control de inventarios</li>
+                        <li>Evaluación financiera</li>
+                        <li>Detección de riesgos</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Importaciones y Logística</h3>
+                    <ul style="text-align: left; padding-left: 1.5rem;">
+                        <li>Gestión de importaciones</li>
+                        <li>Control logístico</li>
+                        <li>Documentación aduanera</li>
+                        <li>Optimización de procesos</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏛️</div>
+                    <h3>Contrataciones con el Estado</h3>
+                    <ul style="text-align: left; padding-left: 1.5rem;">
+                        <li>Elaboración de expedientes</li>
+                        <li>Perfeccionamiento de contratos</li>
+                        <li>Ampliaciones de plazo</li>
+                        <li>Gestión de cartas fianza</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiencia" class="section" style="background: var(--background-light);">
+        <div class="container">
+            <h2 class="section-title">Experiencia Profesional</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Asistente de Gerencia y Contable</h3>
+                    <strong>Industrias Patcor S.A.</strong> | Febrero 2019 - Actualidad
+                    <ul style="margin-top: 1rem;">
+                        <li>Análisis financiero en base al flujo efectivo</li>
+                        <li>Gestión de importaciones y activo fijo</li>
+                        <li>Elaboración de expedientes para contrataciones del Estado</li>
+                        <li>Gestión logística e inventarios</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Practicante pre-profesional</h3>
+                    <strong>Librería El Inca S.A.C.</strong> | Enero 2015 - Diciembre 2015
+                    <ul style="margin-top: 1rem;">
+                        <li>Control de inventario y despacho</li>
+                        <li>Elaboración de libro bancos</li>
+                        <li>Presentación de documentación para importaciones</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificaciones" class="section">
+        <div class="container">
+            <h2 class="section-title">Certificaciones Profesionales</h2>
+            <div class="certification-grid">
+                <div class="cert-card">
+                    <h4>Auditoría Gubernamental</h4>
+                    <p>Universidad de San Martín de Porres</p>
+                </div>
+                <div class="cert-card">
+                    <h4>Contrataciones del Estado</h4>
+                    <p>ESCADE PERÚ</p>
+                </div>
+                <div class="cert-card">
+                    <h4>Instrumentos Financieros</h4>
+                    <p>Universidad de San Martín de Porres</p>
+                </div>
+                <div class="cert-card">
+                    <h4>NIC e Inventarios</h4>
+                    <p>Universidad de San Martín de Porres</p>
+                </div>
+                <div class="cert-card">
+                    <h4>Fiscalización Electrónica</h4>
+                    <p>Colegio de Contadores Públicos de Lima</p>
+                </div>
+                <div class="cert-card">
+                    <h4>Gestión de Carta Fianza</h4>
+                    <p>ESCADE PERÚ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section" style="background: var(--background-light);">
+        <div class="container">
+            <h2 class="section-title">Solicite una Consulta</h2>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Teléfono">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" required>
+                            <option value="">¿Qué servicio necesita?</option>
+                            <option value="contabilidad">Contabilidad y Finanzas</option>
+                            <option value="auditoria">Auditoría y Control</option>
+                            <option value="importaciones">Importaciones y Logística</option>
+                            <option value="contrataciones">Contrataciones con el Estado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Enviar Mensaje</button>
+                </form>
+                <p style="margin-top: 2rem; text-align: center;">
+                    Email: elbs.contabilidad@gmail.com<br>
+                    Teléfono: +51 947 360 922
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Eliana Lucero Bazán Saldaña - Contador Público Certificado</p>
+            <p>Av. José María Arguedas N° 205, Urb. Nocheto - Santa Anita - Lima</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
