@@ -323,7 +323,8 @@ h4 {
 }
 
 .service-card.featured {
-  border: 2px solid var(--accent-color);
+    position: relative;
+    border: 2px solid var(--accent-color);
 }
 
 .service-header {
@@ -345,12 +346,16 @@ h4 {
 }
 
 .service-badge {
-  background: var(--accent-color);
-  color: var(--white);
-  padding: 0.25rem 0.75rem;
-  border-radius: 50px;
-  font-size: 0.8rem;
-  white-space: nowrap;
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px; /* Más redondeado */
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-top: 0; /* Eliminar margen superior */
+    display: inline-flex; /* Asegurar que se comporte como inline */
+    align-items: center;
 }
 
 .service-card h3 {
@@ -1015,100 +1020,100 @@ textarea.form-control {
 /* Mobile responsiveness */
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-    .expertise-items {
-      gap: 1.5rem;
-    }
-  
-    .expertise-item {
-      flex-basis: calc(50% - 0.75rem);
-    }
-  
-    .service-tab {
-      padding: 0.5rem 1rem;
-    }
-  
-    .metrics-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .footer-badges {
-      flex-direction: column;
-    }
-  
-    .timeline-item {
-      flex-direction: column; /* Cambia la dirección a columna */
-      gap: 1rem; /* Añade espacio entre los elementos */
-    }
-  
-    .timeline-date {
-      text-align: left; /* Alinea la fecha a la izquierda */
-      margin-bottom: 0.5rem; /* Añade espacio debajo de la fecha */
-      position: relative;
-      padding-left: 2rem; /* Añade espacio a la izquierda para el punto rojo */
-    }
-  
-    .timeline-content {
-      padding: 1rem; /* Reduce el padding para adaptarse mejor a pantallas pequeñas */
-      margin-left: 2rem; /* Alinea el contenido con la fecha */
-    }
-  
-    .timeline-content::before {
-      left: -1.5rem; /* Ajusta la posición del punto rojo */
-      top: 0.5rem; /* Centra el punto rojo verticalmente */
-    }
-  
-    .timeline::before {
-      left: 1rem; /* Ajusta la línea vertical para que no se superponga */
-    }
-  
-    .mobile-menu-btn {
-      display: block;
-    }
-  
-    .nav-links {
-      display: none;
-    }
-  
-    .hero {
-      padding: 6rem 0 4rem;
-    }
-  
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-  
-    .hero-cta {
-      flex-direction: column;
-    }
-  
-    .trust-indicators {
-      flex-direction: column;
-      gap: 1rem;
-    }
-  
-    .services-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .urgency-content {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .btn-urgency {
-      margin-left: 0;
-      margin-top: 1rem;
-    }
-  
-    .cert-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .contact-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
+  .expertise-items {
+    gap: 1.5rem;
   }
+
+  .expertise-item {
+    flex-basis: calc(50% - 0.75rem);
+  }
+
+  .service-tab {
+    padding: 0.5rem 1rem;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-badges {
+    flex-direction: column;
+  }
+
+  .timeline-item {
+    flex-direction: column; /* Cambia la dirección a columna */
+    gap: 1rem; /* Añade espacio entre los elementos */
+  }
+
+  .timeline-date {
+    text-align: left; /* Alinea la fecha a la izquierda */
+    margin-bottom: 0.5rem; /* Añade espacio debajo de la fecha */
+    position: relative;
+    padding-left: 2rem; /* Añade espacio a la izquierda para el punto rojo */
+  }
+
+  .timeline-content {
+    padding: 1rem; /* Reduce el padding para adaptarse mejor a pantallas pequeñas */
+    margin-left: 2rem; /* Alinea el contenido con la fecha */
+  }
+
+  .timeline-content::before {
+    left: -1.5rem; /* Ajusta la posición del punto rojo */
+    top: 0.5rem; /* Centra el punto rojo verticalmente */
+  }
+
+  .timeline::before {
+    left: 1rem; /* Ajusta la línea vertical para que no se superponga */
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding: 6rem 0 4rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .trust-indicators {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .urgency-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btn-urgency {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
 
 /* Animations */
 @keyframes float {
@@ -1125,6 +1130,38 @@ textarea.form-control {
 
 .hero-badge {
   animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+.btn-urgency {
+  animation: pulse 1.5s infinite; /* Aplica la animación */
+  background-color: var(
+    --accent-color
+  ); /* Asegúrate de que el color destaque */
+  color: var(--white);
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-urgency:hover {
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 /* Smooth scroll */
