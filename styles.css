@@ -916,13 +916,17 @@ textarea.form-control {
 
   .timeline-date {
     text-align: left;
-  }
-
-  .timeline::before {
-    left: 1rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 2rem;
   }
 
   .timeline-content::before {
+    left: 0;
+    top: 0.5rem;
+  }
+
+  .timeline::before {
     left: 0.5rem;
   }
 }
