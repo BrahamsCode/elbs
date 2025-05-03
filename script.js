@@ -1,4 +1,3 @@
-// Mobile menu toggle
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
@@ -9,7 +8,6 @@ mobileMenuBtn.addEventListener('click', () => {
         : '<i class="fas fa-bars"></i>';
 });
 
-// Service tabs functionality
 document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.service-tab');
     const empresasGrid = document.getElementById('empresas-grid');
@@ -17,12 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            // Remove active class from all tabs
             tabs.forEach(t => t.classList.remove('active'));
-            // Add active class to clicked tab
             tab.classList.add('active');
             
-            // Switch grid visibility
             if (tab.dataset.target === 'empresas') {
                 empresasGrid.classList.remove('hidden');
                 gobiernoGrid.classList.add('hidden');
@@ -34,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -58,40 +52,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form validation and submission
 const contactForm = document.getElementById('contactForm');
 
 contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Get form values
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const service = document.getElementById('service').value;
     const message = document.getElementById('message').value.trim();
     
-    // Basic validation
     if (!name || !email || !phone || !service || !message) {
         alert('Por favor, completa todos los campos obligatorios.');
         return;
     }
     
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         alert('Por favor, ingresa un correo electrónico válido.');
         return;
     }
     
-    // Phone validation (Peru format)
     const phoneRegex = /^9[0-9]{8}$/;
     if (!phoneRegex.test(phone)) {
         alert('Por favor, ingresa un teléfono válido (9 dígitos, empezando con 9).');
         return;
     }
     
-    // Create WhatsApp message
     const whatsappMessage = `Hola Eliana,
 
 Mi nombre es *${name}* y me gustaría solicitar una consulta sobre:
@@ -109,15 +97,12 @@ Espero tu respuesta. ¡Gracias!`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
     const whatsappUrl = `https://wa.me/51947360922?text=${encodedMessage}`;
     
-    // Open WhatsApp
     window.open(whatsappUrl, '_blank');
     
-    // Reset form
     contactForm.reset();
     alert('¡Mensaje preparado! Se abrirá WhatsApp para enviarlo.');
 });
 
-// Helper function to get service name
 function getServiceName(value) {
     const services = {
         'formalizacion': 'Formalización de negocio',
@@ -131,7 +116,6 @@ function getServiceName(value) {
     return services[value] || value;
 }
 
-// Add active state to navigation on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
@@ -143,7 +127,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Intersection Observer for animations
 const observerOptions = {
     threshold: 0.1
 };
@@ -156,7 +139,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe elements for animation
 document.querySelectorAll('.service-card').forEach((card) => {
     observer.observe(card);
 });
@@ -169,7 +151,6 @@ document.querySelectorAll('.testimonial-card').forEach((card) => {
     observer.observe(card);
 });
 
-// Add CSS classes for animations
 const style = document.createElement('style');
 style.textContent = `
     .service-card, .timeline-item, .testimonial-card {
@@ -205,7 +186,6 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Phone number formatter
 const phoneInput = document.getElementById('phone');
 phoneInput.addEventListener('input', (e) => {
     e.target.value = e.target.value.replace(/[^0-9]/g, '');
@@ -214,7 +194,6 @@ phoneInput.addEventListener('input', (e) => {
     }
 });
 
-// Add character counter to message textarea
 const messageTextarea = document.getElementById('message');
 const charCounter = document.createElement('div');
 charCounter.style.textAlign = 'right';
@@ -228,7 +207,6 @@ messageTextarea.addEventListener('input', () => {
     charCounter.textContent = `${charCount} caracteres`;
 });
 
-// Add form field focus effects
 document.querySelectorAll('.form-control').forEach(input => {
     input.addEventListener('focus', () => {
         input.parentElement.classList.add('focused');
@@ -241,7 +219,6 @@ document.querySelectorAll('.form-control').forEach(input => {
     });
 });
 
-// Enhanced CSS for form focus effects
 const formStyle = document.createElement('style');
 formStyle.textContent = `
     .form-group.focused .form-control {
@@ -251,14 +228,12 @@ formStyle.textContent = `
 `;
 document.head.appendChild(formStyle);
 
-// Animate expertise ribbon items
 document.querySelectorAll('.expertise-item').forEach((item, index) => {
     setTimeout(() => {
         item.classList.add('animate');
     }, index * 100);
 });
 
-// Animate metrics when in view
 const metricsObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -276,7 +251,6 @@ if (performanceMetrics) {
     metricsObserver.observe(performanceMetrics);
 }
 
-// Add typing animation to hero text
 const heroText = document.querySelector('.hero h1');
 if (heroText) {
     const text = heroText.textContent;
@@ -294,7 +268,6 @@ if (heroText) {
     setTimeout(typeWriter, 500);
 }
 
-// Testimonial card hover effects
 document.querySelectorAll('.testimonial-card').forEach(card => {
     card.addEventListener('mouseenter', () => {
         card.style.transform = 'translateY(-10px)';
@@ -307,7 +280,6 @@ document.querySelectorAll('.testimonial-card').forEach(card => {
     });
 });
 
-// Add countdown to urgency banner
 const urgencyBanner = document.querySelector('.urgency-banner');
 if (urgencyBanner) {
     setInterval(() => {
@@ -320,7 +292,6 @@ if (urgencyBanner) {
     }, 60000);
 }
 
-// Add click tracking for call-to-action buttons
 document.querySelectorAll('.btn-primary, .btn-secondary, .btn-urgency').forEach(btn => {
     btn.addEventListener('click', () => {
         const buttonText = btn.textContent.trim();
