@@ -1,495 +1,399 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-PE">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliana Bazán | Contadora Pública Certificada - Servicios Contables Profesionales</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2c5282;
-            --accent-color: #3182ce;
-            --text-dark: #2d3748;
-            --text-light: #4a5568;
-            --background-light: #f7fafc;
-            --gold: #d69e2e;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-
-        .navbar {
-            background: var(--primary-color);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem;
-            transition: opacity 0.3s;
-        }
-
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><path fill="%231a365d" d="M0 0h800v600H0z"/><path fill="%232c5282" d="M-1.1 0C8 45.3 34 110.7 127 177.3c80 57.3 113.2 55.8 151 61.3 54 7.9 77.8 18.9 147 62.7 92 58.3 197.3 89.3 304 14 106.7-75.3 214.7-166.7 359-114 6.7 2.5 20.7 8.9 40 16v382H-1.1z"/></svg>');
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-            margin-top: -80px;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .btn-primary {
-            background: var(--gold);
-            color: white;
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(214, 158, 46, 0.3);
-        }
-
-        .credentials {
-            background: white;
-            padding: 5rem 0;
-            position: relative;
-            z-index: 2;
-            margin-top: -50px;
-            border-radius: 30px 30px 0 0;
-        }
-
-        .credential-card {
-            background: var(--background-light);
-            padding: 1.5rem;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 1rem;
-            transition: transform 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .credential-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .section {
-            padding: 5rem 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--accent-color);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
-            padding-left: 2rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.5rem;
-            top: 0;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background: var(--accent-color);
-        }
-
-        .certification-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .cert-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: box-shadow 0.3s;
-        }
-
-        .cert-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            font-family: inherit;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-color);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
+    <title>Eliana Bazán - Contadora Pública en Lima | Servicios Contables MYPE</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-content">
-            <a href="#home" class="logo">Eliana Bazán</a>
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-text">Eliana</span>
+                <span class="logo-subtext">Contador Público</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="nav-links">
                 <a href="#servicios">Servicios</a>
                 <a href="#experiencia">Experiencia</a>
                 <a href="#certificaciones">Certificaciones</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#contacto" class="btn-nav">Consulta Gratuita</a>
             </div>
         </div>
     </nav>
 
     <header id="home" class="hero">
         <div class="hero-content">
-            <h1>Soluciones Contables<br>de Excelencia</h1>
-            <p>Bachiller en Ciencias Contables y Financieras | 8 años de experiencia profesional</p>
-            <a href="#contacto" class="btn-primary">Solicitar Consulta</a>
+            <div class="hero-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>Contadora Certificada USMP</span>
+            </div>
+            <h1>Tu Solución Contable<br>para MYPE en Lima</h1>
+            <p>8 años simplificando la contabilidad para pequeñas y medianas empresas peruanas</p>
+            <div class="hero-cta">
+                <a href="#contacto" class="btn-primary">
+                    <i class="fas fa-calendar-check"></i>
+                    Agendar Consulta Gratuita
+                </a>
+                <a href="https://wa.me/51947360922" class="btn-secondary" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp Directo
+                </a>
+            </div>
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <span class="trust-number">100+</span>
+                    <span class="trust-label">Empresas asesoradas</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">8</span>
+                    <span class="trust-label">Años de experiencia</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-number">24h</span>
+                    <span class="trust-label">Respuesta máxima</span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section class="credentials">
+    <section class="urgency-banner">
         <div class="container">
+            <div class="urgency-content">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div>
+                    <h3>¿Tu negocio aún no está formalizado?</h3>
+                    <p>La SUNAT está reforzando las fiscalizaciones. Asegura tu negocio hoy.</p>
+                </div>
+                <a href="#contacto" class="btn-urgency">Solicitar Asesoría <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Servicios para MYPE Peruanas</h2>
+                <p>Soluciones diseñadas para pequeñas y medianas empresas</p>
+            </div>
+            
             <div class="services-grid">
-                <div class="credential-card">
-                    <h3>Bachiller en Ciencias Contables</h3>
-                    <p>Universidad de San Martín de Porres</p>
-                    <small>Especialidad: Auditoría</small>
+                <div class="service-card featured">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-check"></i>
+                        </div>
+                        <span class="service-badge">Más solicitado</span>
+                    </div>
+                    <h3>Formalización MYPE</h3>
+                    <p>Te ayudamos a formalizar tu negocio según la normativa peruana actual.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Inscripción en SUNARP</li>
+                        <li><i class="fas fa-check"></i> RUC y Régimen Tributario</li>
+                        <li><i class="fas fa-check"></i> Licencia de funcionamiento</li>
+                        <li><i class="fas fa-check"></i> Asesoría legal</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-label">Desde</span>
+                        <span class="price">S/. 500</span>
+                    </div>
                 </div>
-                <div class="credential-card">
-                    <h3>8 Años de Experiencia</h3>
-                    <p>Auditoría • Control de Inventarios • Finanzas</p>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                    </div>
+                    <h3>Contabilidad Mensual</h3>
+                    <p>Lleva tus libros al día y cumple con SUNAT sin complicaciones.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Registro de ventas/compras</li>
+                        <li><i class="fas fa-check"></i> Planilla electrónica</li>
+                        <li><i class="fas fa-check"></i> Declaraciones mensuales</li>
+                        <li><i class="fas fa-check"></i> Portal web personal</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-label">Desde</span>
+                        <span class="price">S/. 300</span>
+                        <span class="price-period">/mes</span>
+                    </div>
                 </div>
-                <div class="credential-card">
-                    <h3>Certificado Técnico</h3>
-                    <p>Asistente de Administración</p>
-                    <small>I.E.P. Johannes Gutenberg</small>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                    </div>
+                    <h3>Importaciones Seguras</h3>
+                    <p>Gestión completa de tus importaciones con Aduanas Perú.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Gestión aduanera</li>
+                        <li><i class="fas fa-check"></i> Clasificación arancelaria</li>
+                        <li><i class="fas fa-check"></i> Valorización de mercancías</li>
+                        <li><i class="fas fa-check"></i> Seguimiento VUCE</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-label">Consulta</span>
+                        <span class="price">Tarifa</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                    </div>
+                    <h3>Licitaciones Estatales</h3>
+                    <p>Te preparamos para ganar contratos con el Estado peruano.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Elaboración de expedientes</li>
+                        <li><i class="fas fa-check"></i> Cartas fianza</li>
+                        <li><i class="fas fa-check"></i> Seguimiento SEACE</li>
+                        <li><i class="fas fa-check"></i> Ampliaciones de plazo</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-label">Consulta</span>
+                        <span class="price">Tarifa</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="servicios" class="section">
+    <section class="why-choose" style="background: var(--background-light);">
         <div class="container">
-            <h2 class="section-title">Servicios Especializados</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Contabilidad y Finanzas</h3>
-                    <ul style="text-align: left; padding-left: 1.5rem;">
-                        <li>Elaboración de registro de ventas y compras</li>
-                        <li>Análisis de cuentas contables</li>
-                        <li>Cálculo de planilla y declaración en PLAME</li>
-                        <li>Conciliación bancaria</li>
-                    </ul>
+            <h2>¿Por qué elegir mis servicios?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Especialista en MYPE</h3>
+                    <p>8 años enfocada en pequeñas y medianas empresas peruanas</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🔍</div>
-                    <h3>Auditoría y Control</h3>
-                    <ul style="text-align: left; padding-left: 1.5rem;">
-                        <li>Auditoría interna y externa</li>
-                        <li>Control de inventarios</li>
-                        <li>Evaluación financiera</li>
-                        <li>Detección de riesgos</li>
-                    </ul>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Respuesta Rápida</h3>
+                    <p>Atención dentro de 24 horas (incluye WhatsApp)</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">📦</div>
-                    <h3>Importaciones y Logística</h3>
-                    <ul style="text-align: left; padding-left: 1.5rem;">
-                        <li>Gestión de importaciones</li>
-                        <li>Control logístico</li>
-                        <li>Documentación aduanera</li>
-                        <li>Optimización de procesos</li>
-                    </ul>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Certificaciones</h3>
+                    <p>Bachiller USMP con múltiples especializaciones</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🏛️</div>
-                    <h3>Contrataciones con el Estado</h3>
-                    <ul style="text-align: left; padding-left: 1.5rem;">
-                        <li>Elaboración de expedientes</li>
-                        <li>Perfeccionamiento de contratos</li>
-                        <li>Ampliaciones de plazo</li>
-                        <li>Gestión de cartas fianza</li>
-                    </ul>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Precios Justos</h3>
+                    <p>Tarifas competitivas sin comprometer calidad</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experiencia" class="section" style="background: var(--background-light);">
+    <section id="experiencia" class="experience">
         <div class="container">
-            <h2 class="section-title">Experiencia Profesional</h2>
+            <h2>Mi Experiencia Contable</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>Asistente de Gerencia y Contable</h3>
-                    <strong>Industrias Patcor S.A.</strong> | Febrero 2019 - Actualidad
-                    <ul style="margin-top: 1rem;">
-                        <li>Análisis financiero en base al flujo efectivo</li>
-                        <li>Gestión de importaciones y activo fijo</li>
-                        <li>Elaboración de expedientes para contrataciones del Estado</li>
-                        <li>Gestión logística e inventarios</li>
-                    </ul>
+                    <div class="timeline-date">2019 - Presente</div>
+                    <div class="timeline-content">
+                        <h3>Asistente de Gerencia y Contable</h3>
+                        <h4>Industrias Patcor S.A. - Santa Anita</h4>
+                        <ul>
+                            <li>Gestión integral de contabilidad para empresa manufacturera</li>
+                            <li>Manejo de importaciones con Aduanas Perú</li>
+                            <li>Elaboración de expedientes para licitaciones públicas</li>
+                            <li>Supervisión de equipo contable (3 personas)</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="timeline-item">
-                    <h3>Practicante pre-profesional</h3>
-                    <strong>Librería El Inca S.A.C.</strong> | Enero 2015 - Diciembre 2015
-                    <ul style="margin-top: 1rem;">
-                        <li>Control de inventario y despacho</li>
-                        <li>Elaboración de libro bancos</li>
-                        <li>Presentación de documentación para importaciones</li>
+                    <div class="timeline-date">2015</div>
+                    <div class="timeline-content">
+                        <h3>Practicante Contable</h3>
+                        <h4>Librería El Inca S.A.C.</h4>
+                        <ul>
+                            <li>Registro de operaciones contables</li>
+                            <li>Control de inventarios</li>
+                            <li>Asistencia en importaciones</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificaciones" class="certifications">
+        <div class="container">
+            <h2>Formación y Certificaciones</h2>
+            <div class="cert-grid">
+                <div class="cert-highlight">
+                    <div class="cert-icon">🎓</div>
+                    <h3>Bachiller en Ciencias Contables</h3>
+                    <p>Universidad de San Martín de Porres (USMP)</p>
+                    <span class="cert-year">2021</span>
+                </div>
+                <div class="cert-list">
+                    <h4>Especializaciones Recientes</h4>
+                    <ul>
+                        <li>Gestión de Cartas Fianza (ESCADE, 2022)</li>
+                        <li>Contrataciones con el Estado (ESCADE, 2021-2022)</li>
+                        <li>Fiscalización Electrónica SUNAT (CCPL, 2018)</li>
+                        <li>Instrumentos Financieros (USMP, 2017)</li>
+                        <li>Auditoría Gubernamental (USMP, 2022)</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="certificaciones" class="section">
+    <section id="testimonios" class="testimonials">
         <div class="container">
-            <h2 class="section-title">Certificaciones Profesionales</h2>
-            <div class="certification-grid">
-                <div class="cert-card">
-                    <h4>Auditoría Gubernamental</h4>
-                    <p>Universidad de San Martín de Porres</p>
+            <h2>Lo que dicen mis clientes</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Gracias a Eliana, finalmente pude formalizar mi bodega. Ahora puedo facturar y mi negocio está creciendo sin problemas con SUNAT."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>María L.</strong>
+                        <span>Bodega Los Chamos - Lima</span>
+                    </div>
                 </div>
-                <div class="cert-card">
-                    <h4>Contrataciones del Estado</h4>
-                    <p>ESCADE PERÚ</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Su experiencia en importaciones me ahorró tiempo y dinero. Simplifica todo el proceso con Aduanas y me mantiene informado."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Carlos R.</strong>
+                        <span>Importaciones CR SAC</span>
+                    </div>
                 </div>
-                <div class="cert-card">
-                    <h4>Instrumentos Financieros</h4>
-                    <p>Universidad de San Martín de Porres</p>
-                </div>
-                <div class="cert-card">
-                    <h4>NIC e Inventarios</h4>
-                    <p>Universidad de San Martín de Porres</p>
-                </div>
-                <div class="cert-card">
-                    <h4>Fiscalización Electrónica</h4>
-                    <p>Colegio de Contadores Públicos de Lima</p>
-                </div>
-                <div class="cert-card">
-                    <h4>Gestión de Carta Fianza</h4>
-                    <p>ESCADE PERÚ</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Profesional y puntual. Me ayudó a ganar mi primera licitación estatal. Su conocimiento del proceso es invaluable."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Jorge M.</strong>
+                        <span>Constructora JM EIRL</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="section" style="background: var(--background-light);">
+    <section id="contacto" class="contact">
         <div class="container">
-            <h2 class="section-title">Solicite una Consulta</h2>
-            <div class="contact-form">
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nombre completo" required>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Consulta Gratuita</h2>
+                    <p>Agenda una llamada de 30 minutos para conocer tus necesidades contables sin compromiso.</p>
+                    
+                    <div class="contact-methods">
+                        <a href="https://wa.me/51947360922" class="contact-method" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <p>+51 947 360 922</p>
+                            </div>
+                        </a>
+                        <a href="mailto:elbs.contabilidad@gmail.com" class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>elbs.contabilidad@gmail.com</p>
+                            </div>
+                        </a>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Oficina</h4>
+                                <p>Santa Anita, Lima - Perú</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Correo electrónico" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" class="form-control" placeholder="Teléfono">
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control" required>
-                            <option value="">¿Qué servicio necesita?</option>
-                            <option value="contabilidad">Contabilidad y Finanzas</option>
-                            <option value="auditoria">Auditoría y Control</option>
-                            <option value="importaciones">Importaciones y Logística</option>
-                            <option value="contrataciones">Contrataciones con el Estado</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" placeholder="Mensaje" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary">Enviar Mensaje</button>
-                </form>
-                <p style="margin-top: 2rem; text-align: center;">
-                    Email: elbs.contabilidad@gmail.com<br>
-                    Teléfono: +51 947 360 922
-                </p>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Nombre completo *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Correo electrónico *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Teléfono (WhatsApp)" pattern="[0-9]{9}" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="service" required>
+                                <option value="">¿Qué servicio necesitas? *</option>
+                                <option value="formalizacion">Formalización de negocio</option>
+                                <option value="contabilidad">Contabilidad mensual</option>
+                                <option value="importaciones">Gestión de importaciones</option>
+                                <option value="licitaciones">Asesoría en licitaciones</option>
+                                <option value="otro">Otro servicio</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Describe brevemente tu negocio o consulta *" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" required> 
+                                Acepto la <a href="#" style="color: var(--accent-color);">política de privacidad</a>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Solicitar Consulta Gratuita
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Eliana Lucero Bazán Saldaña - Contador Público Certificado</p>
-            <p>Av. José María Arguedas N° 205, Urb. Nocheto - Santa Anita - Lima</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Eliana Lucero Bazán Saldaña</h3>
+                    <p>Contador Público Certificado</p>
+                    <p>Especialista en MYPE Peruanas</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces Útiles</h4>
+                    <ul>
+                        <li><a href="https://www.sunat.gob.pe" target="_blank">SUNAT</a></li>
+                        <li><a href="http://www.seace.gob.pe" target="_blank">SEACE</a></li>
+                        <li><a href="https://www.sunarp.gob.pe" target="_blank">SUNARP</a></li>
+                        <li><a href="https://www.ccpl.org.pe" target="_blank">CCPL</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>📍 Santa Anita, Lima - Perú</p>
+                    <p>📞 +51 947 360 922</p>
+                    <p>✉️ elbs.contabilidad@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eliana Bazán - Todos los derechos reservados</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
-    </script>
+    <a href="https://wa.me/51947360922" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
 </body>
 </html>
