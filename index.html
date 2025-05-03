@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="es-PE">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliana Bazán - Contadora Pública en Lima | Servicios Contables MYPE</title>
+    <title>Eliana Bazán - Contadora Pública Certificada en Lima | Servicios Contables MYPE</title>
+    <meta name="description"
+        content="Contadora certificada con 9+ años de experiencia en contabilidad, importaciones y gestión municipal. Servicios contables profesionales para MYPE peruanas.">
+    <meta name="keywords"
+        content="contador publico lima, contabilidad mype, asesoria contable peru, formalización empresas peru">
+
+    <meta property="og:title" content="Eliana Bazán - Contadora Pública Certificada">
+    <meta property="og:description" content="9+ años de experiencia en contabilidad municipal y empresarial">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.elianabazancpa.com">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">
                 <span class="logo-text">Eliana Bazán Saldaña</span>
-                <span class="logo-subtext">Contador Público</span>
+                <span class="logo-subtext">CPC | MYPE Specialist</span>
             </a>
             <button class="mobile-menu-btn" aria-label="Abrir menú">
                 <i class="fas fa-bars"></i>
@@ -31,10 +45,10 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <i class="fas fa-shield-alt"></i>
-                <span>Contadora Certificada USMP</span>
+                <span>Especialista Certificada USMP</span>
             </div>
-            <h1>Tu Solución Contable<br>para MYPE en Lima</h1>
-            <p>8 años simplificando la contabilidad para pequeñas y medianas empresas peruanas</p>
+            <h1>Tu Aliada Contable para<br>MYPE y Gobierno en Lima</h1>
+            <p>Especialista en Contabilidad Municipal con experiencia en gobierno y empresas</p>
             <div class="hero-cta">
                 <a href="#contacto" class="btn-primary">
                     <i class="fas fa-calendar-check"></i>
@@ -47,11 +61,11 @@
             </div>
             <div class="trust-indicators">
                 <div class="trust-item">
-                    <span class="trust-number">100+</span>
+                    <span class="trust-number">150+</span>
                     <span class="trust-label">Empresas asesoradas</span>
                 </div>
                 <div class="trust-item">
-                    <span class="trust-number">8</span>
+                    <span class="trust-number">9+</span>
                     <span class="trust-label">Años de experiencia</span>
                 </div>
                 <div class="trust-item">
@@ -61,6 +75,29 @@
             </div>
         </div>
     </header>
+
+    <section class="expertise-ribbon">
+        <div class="container">
+            <div class="expertise-items">
+                <div class="expertise-item">
+                    <i class="fas fa-building"></i>
+                    <span>Contabilidad Municipal</span>
+                </div>
+                <div class="expertise-item">
+                    <i class="fas fa-industry"></i>
+                    <span>MYPE Industrial</span>
+                </div>
+                <div class="expertise-item">
+                    <i class="fas fa-ship"></i>
+                    <span>Importaciones</span>
+                </div>
+                <div class="expertise-item">
+                    <i class="fas fa-users"></i>
+                    <span>Gestión de Planillas</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="urgency-banner">
         <div class="container">
@@ -78,11 +115,16 @@
     <section id="servicios" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Servicios para MYPE Peruanas</h2>
-                <p>Soluciones diseñadas para pequeñas y medianas empresas</p>
+                <h2>Servicios Especializados</h2>
+                <p>Soluciones diseñadas para MYPE y entidades públicas</p>
             </div>
-            
-            <div class="services-grid">
+
+            <div class="service-tabs">
+                <button class="service-tab active" data-target="empresas">Empresas</button>
+                <button class="service-tab" data-target="gobierno">Gobierno</button>
+            </div>
+
+            <div class="services-grid" id="empresas-grid">
                 <div class="service-card featured">
                     <div class="service-header">
                         <div class="service-icon">
@@ -114,7 +156,7 @@
                     <p>Lleva tus libros al día y cumple con SUNAT sin complicaciones.</p>
                     <ul class="service-list">
                         <li><i class="fas fa-check"></i> Registro de ventas/compras</li>
-                        <li><i class="fas fa-check"></i> Planilla electrónica</li>
+                        <li><i class="fas fa-check"></i> Planilla electrónica T-Registro</li>
                         <li><i class="fas fa-check"></i> Declaraciones mensuales</li>
                         <li><i class="fas fa-check"></i> Portal web personal</li>
                     </ul>
@@ -132,7 +174,7 @@
                         </div>
                     </div>
                     <h3>Importaciones Seguras</h3>
-                    <p>Gestión completa de tus importaciones con Aduanas Perú.</p>
+                    <p>Experiencia con Industrias Patcor en manejo de aduanas.</p>
                     <ul class="service-list">
                         <li><i class="fas fa-check"></i> Gestión aduanera</li>
                         <li><i class="fas fa-check"></i> Clasificación arancelaria</li>
@@ -165,6 +207,49 @@
                     </div>
                 </div>
             </div>
+
+            <div class="services-grid hidden" id="gobierno-grid">
+                <div class="service-card featured">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <span class="service-badge">Especialidad</span>
+                    </div>
+                    <h3>Contabilidad Municipal</h3>
+                    <p>Experiencia directa en Municipalidad de Santa Anita</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> SIAF Gubernamental</li>
+                        <li><i class="fas fa-check"></i> Programación presupuestal</li>
+                        <li><i class="fas fa-check"></i> Ejecución de gastos</li>
+                        <li><i class="fas fa-check"></i> Reportes financieros</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-label">Consulta</span>
+                        <span class="price">Tarifa</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                    </div>
+                    <h3>Gestión de Planillas</h3>
+                    <p>Especialista en planillas públicas y privadas</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> T-Registro / AIRHSP</li>
+                        <li><i class="fas fa-check"></i> AFP y seguros</li>
+                        <li><i class="fas fa-check"></i> Cálculo de beneficios</li>
+                        <li><i class="fas fa-check"></i> Declaraciones PLAME</li>
+                    </ul>
+                    <div class="service-price">
+                        <span class="price-label">Consulta</span>
+                        <span class="price">Tarifa</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -173,19 +258,19 @@
             <h2>¿Por qué elegir mis servicios?</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
+                    <div class="benefit-icon">🏛️</div>
+                    <h3>Experiencia Municipal</h3>
+                    <p>Especialista en planillas y contabilidad gubernamental</p>
+                </div>
+                <div class="benefit-card">
                     <div class="benefit-icon">🎯</div>
-                    <h3>Especialista en MYPE</h3>
-                    <p>8 años enfocada en pequeñas y medianas empresas peruanas</p>
+                    <h3>Especialista MYPE</h3>
+                    <p>9+ años enfocada en pequeñas y medianas empresas</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">⚡</div>
                     <h3>Respuesta Rápida</h3>
                     <p>Atención dentro de 24 horas (incluye WhatsApp)</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🏆</div>
-                    <h3>Certificaciones</h3>
-                    <p>Bachiller USMP con múltiples especializaciones</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">💰</div>
@@ -198,10 +283,45 @@
 
     <section id="experiencia" class="experience">
         <div class="container">
-            <h2>Mi Experiencia Contable</h2>
+            <h2>Mi Trayectoria Profesional</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">2019 - Presente</div>
+                    <div class="timeline-date">
+                        <span class="start-date">Jun 2024</span>
+                        <span class="end-date">Presente</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Especialista en Planilla</h3>
+                        <h4>Municipalidad de Santa Anita</h4>
+                        <ul>
+                            <li>Gestión integral de planillas municipales</li>
+                            <li>Implementación de T-Registro y AIRHSP</li>
+                            <li>Cumplimiento normativo de beneficios del personal</li>
+                            <li>Coordinación con el sistema financiero municipal</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="start-date">Ene 2023</span>
+                        <span class="end-date">Abr 2025</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Auxiliar de Contabilidad</h3>
+                        <h4>TGS Sarrio</h4>
+                        <ul>
+                            <li>Registro de operaciones contables</li>
+                            <li>Conciliaciones bancarias</li>
+                            <li>Asistencia en declaraciones tributarias</li>
+                            <li>Soporte en auditorías internas</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="start-date">Feb 2019</span>
+                        <span class="end-date">Dic 2022</span>
+                    </div>
                     <div class="timeline-content">
                         <h3>Asistente de Gerencia y Contable</h3>
                         <h4>Industrias Patcor S.A. - Santa Anita</h4>
@@ -214,7 +334,10 @@
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">2015</div>
+                    <div class="timeline-date">
+                        <span class="start-date">2015</span>
+                        <span class="end-date">2018</span>
+                    </div>
                     <div class="timeline-content">
                         <h3>Practicante Contable</h3>
                         <h4>Librería El Inca S.A.C.</h4>
@@ -253,35 +376,96 @@
         </div>
     </section>
 
+    <section class="performance-metrics">
+        <div class="container">
+            <h2>Mi Desempeño Comprobado</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="metric-value">98%</div>
+                    <div class="metric-label">Satisfacción Cliente</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="metric-value">
+                        < 24h</div>
+                            <div class="metric-label">Tiempo de Respuesta</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="metric-value">100%</div>
+                        <div class="metric-label">Cumplimiento SUNAT</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="metric-value">30+</div>
+                        <div class="metric-label">Contratos Estatales</div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
     <section id="testimonios" class="testimonials">
         <div class="container">
             <h2>Lo que dicen mis clientes</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"Gracias a Eliana, finalmente pude formalizar mi bodega. Ahora puedo facturar y mi negocio está creciendo sin problemas con SUNAT."</p>
+                        <p>"Gracias a Eliana, finalmente pude formalizar mi bodega. Ahora puedo facturar y mi negocio
+                            está creciendo sin problemas con SUNAT."</p>
                     </div>
                     <div class="testimonial-author">
                         <strong>María L.</strong>
                         <span>Bodega Los Chamos - Lima</span>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"Su experiencia en importaciones me ahorró tiempo y dinero. Simplifica todo el proceso con Aduanas y me mantiene informado."</p>
+                        <p>"Su experiencia en importaciones me ahorró tiempo y dinero. Simplifica todo el proceso con
+                            Aduanas y me mantiene informado."</p>
                     </div>
                     <div class="testimonial-author">
                         <strong>Carlos R.</strong>
                         <span>Importaciones CR SAC</span>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"Profesional y puntual. Me ayudó a ganar mi primera licitación estatal. Su conocimiento del proceso es invaluable."</p>
+                        <p>"Profesional y puntual. Me ayudó a ganar mi primera licitación estatal. Su conocimiento del
+                            proceso es invaluable."</p>
                     </div>
                     <div class="testimonial-author">
                         <strong>Jorge M.</strong>
                         <span>Constructora JM EIRL</span>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -294,7 +478,7 @@
                 <div class="contact-info">
                     <h2>Consulta Gratuita</h2>
                     <p>Agenda una llamada de 30 minutos para conocer tus necesidades contables sin compromiso.</p>
-                    
+
                     <div class="contact-methods">
                         <a href="https://wa.me/51947360922" class="contact-method" target="_blank">
                             <i class="fab fa-whatsapp"></i>
@@ -318,18 +502,25 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="availability-badge">
+                        <i class="fas fa-circle" style="color: #059669; margin-right: 8px;"></i>
+                        <span>Disponible para nuevos clientes</span>
+                    </div>
                 </div>
-                
+
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
                             <input type="text" class="form-control" id="name" placeholder="Nombre completo *" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="Correo electrónico *" required>
+                            <input type="email" class="form-control" id="email" placeholder="Correo electrónico *"
+                                required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" class="form-control" id="phone" placeholder="Teléfono (WhatsApp)" pattern="[0-9]{9}" required>
+                            <input type="tel" class="form-control" id="phone" placeholder="Teléfono (WhatsApp)"
+                                pattern="[0-9]{9}" required>
                         </div>
                         <div class="form-group">
                             <select class="form-control" id="service" required>
@@ -338,15 +529,18 @@
                                 <option value="contabilidad">Contabilidad mensual</option>
                                 <option value="importaciones">Gestión de importaciones</option>
                                 <option value="licitaciones">Asesoría en licitaciones</option>
+                                <option value="municipal">Servicios municipales</option>
+                                <option value="planilla">Gestión de planillas</option>
                                 <option value="otro">Otro servicio</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id="message" placeholder="Describe brevemente tu negocio o consulta *" required></textarea>
+                            <textarea class="form-control" id="message"
+                                placeholder="Describe brevemente tu negocio o consulta *" required></textarea>
                         </div>
                         <div class="form-group">
                             <label class="checkbox-label">
-                                <input type="checkbox" required> 
+                                <input type="checkbox" required>
                                 Acepto la <a href="#" style="color: var(--accent-color);">política de privacidad</a>
                             </label>
                         </div>
@@ -366,7 +560,15 @@
                 <div class="footer-brand">
                     <h3>Eliana Lucero Bazán Saldaña</h3>
                     <p>Contador Público Certificado</p>
-                    <p>Especialista en MYPE Peruanas</p>
+                    <p>Especialista en MYPE y Contabilidad Municipal</p>
+                    <div class="footer-badges">
+                        <span class="footer-badge">
+                            <i class="fas fa-certificate"></i> CPC Certificada
+                        </span>
+                        <span class="footer-badge">
+                            <i class="fas fa-check-circle"></i> 9+ Años Experiencia
+                        </span>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <h4>Enlaces Útiles</h4>
@@ -375,6 +577,7 @@
                         <li><a href="http://www.seace.gob.pe" target="_blank">SEACE</a></li>
                         <li><a href="https://www.sunarp.gob.pe" target="_blank">SUNARP</a></li>
                         <li><a href="https://www.ccpl.org.pe" target="_blank">CCPL</a></li>
+                        <li><a href="https://www.mef.gob.pe" target="_blank">MEF</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -382,10 +585,12 @@
                     <p>📍 Santa Anita, Lima - Perú</p>
                     <p>📞 +51 947 360 922</p>
                     <p>✉️ elbs.contabilidad@gmail.com</p>
+                    <p>🕒 Lun - Vie: 9:00 AM - 6:00 PM</p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2024 Eliana Bazán - Todos los derechos reservados</p>
+                <p class="footer-disclaimer">Los servicios están sujetos a disponibilidad. Se requiere cita previa.</p>
             </div>
         </div>
     </footer>
@@ -396,4 +601,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

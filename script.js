@@ -9,6 +9,31 @@ mobileMenuBtn.addEventListener('click', () => {
         : '<i class="fas fa-bars"></i>';
 });
 
+// Service tabs functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.service-tab');
+    const empresasGrid = document.getElementById('empresas-grid');
+    const gobiernoGrid = document.getElementById('gobierno-grid');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tab
+            tab.classList.add('active');
+            
+            // Switch grid visibility
+            if (tab.dataset.target === 'empresas') {
+                empresasGrid.classList.remove('hidden');
+                gobiernoGrid.classList.add('hidden');
+            } else {
+                empresasGrid.classList.add('hidden');
+                gobiernoGrid.classList.remove('hidden');
+            }
+        });
+    });
+});
+
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -69,14 +94,17 @@ contactForm.addEventListener('submit', function(e) {
     // Create WhatsApp message
     const whatsappMessage = `Hola Eliana,
 
-Mi nombre es ${name} y me gustaría solicitar una consulta sobre:
+Mi nombre es *${name}* y me gustaría solicitar una consulta sobre:
 
-Servicio solicitado: ${getServiceName(service)}
-Mensaje: ${message}
+*Servicio solicitado:* ${getServiceName(service)}
 
-Datos de contacto:
-- Email: ${email}
-- Teléfono: ${phone}`;
+*Mensaje:* ${message}
+
+*Datos de contacto:*
+📧 Email: ${email}
+📱 Teléfono: ${phone}
+
+Espero tu respuesta. ¡Gracias!`;
     
     const encodedMessage = encodeURIComponent(whatsappMessage);
     const whatsappUrl = `https://wa.me/51947360922?text=${encodedMessage}`;
@@ -96,6 +124,8 @@ function getServiceName(value) {
         'contabilidad': 'Contabilidad mensual',
         'importaciones': 'Gestión de importaciones',
         'licitaciones': 'Asesoría en licitaciones',
+        'municipal': 'Servicios municipales',
+        'planilla': 'Gestión de planillas',
         'otro': 'Otro servicio'
     };
     return services[value] || value;
@@ -151,6 +181,27 @@ style.textContent = `
         opacity: 1;
         transform: translateY(0);
     }
+    .expertise-item {
+        opacity: 0;
+        transform: translateX(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .expertise-item.animate {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .metric-card {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .metric-card.animate {
+        opacity: 1;
+        transform: scale(1);
+    }
+    .hidden {
+        display: none !important;
+    }
 `;
 document.head.appendChild(style);
 
@@ -199,3 +250,81 @@ formStyle.textContent = `
     }
 `;
 document.head.appendChild(formStyle);
+
+// Animate expertise ribbon items
+document.querySelectorAll('.expertise-item').forEach((item, index) => {
+    setTimeout(() => {
+        item.classList.add('animate');
+    }, index * 100);
+});
+
+// Animate metrics when in view
+const metricsObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.metric-card').forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('animate');
+                }, index * 100);
+            });
+        }
+    });
+}, { threshold: 0.1 });
+
+const performanceMetrics = document.querySelector('.performance-metrics');
+if (performanceMetrics) {
+    metricsObserver.observe(performanceMetrics);
+}
+
+// Add typing animation to hero text
+const heroText = document.querySelector('.hero h1');
+if (heroText) {
+    const text = heroText.textContent;
+    heroText.textContent = '';
+    let index = 0;
+    
+    function typeWriter() {
+        if (index < text.length) {
+            heroText.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 50);
+        }
+    }
+    
+    setTimeout(typeWriter, 500);
+}
+
+// Testimonial card hover effects
+document.querySelectorAll('.testimonial-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px)';
+        card.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,0.1)';
+    });
+});
+
+// Add countdown to urgency banner
+const urgencyBanner = document.querySelector('.urgency-banner');
+if (urgencyBanner) {
+    setInterval(() => {
+        const currentHour = new Date().getHours();
+        if (currentHour >= 18 || currentHour < 9) {
+            urgencyBanner.style.opacity = '0.7';
+        } else {
+            urgencyBanner.style.opacity = '1';
+        }
+    }, 60000);
+}
+
+// Add click tracking for call-to-action buttons
+document.querySelectorAll('.btn-primary, .btn-secondary, .btn-urgency').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const buttonText = btn.textContent.trim();
+        console.log(`Button clicked: ${buttonText}`);
+        // Here you could add analytics tracking
+    });
+});
